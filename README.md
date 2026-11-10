@@ -27,11 +27,15 @@ jobs:
         with:
           auth-url: ${{ secrets.SF_AUDIT_AUTH_URL }}
           fail-on: HIGH
-          plugin-version: '1.24.1'
+          plugin-version: '1.25.0'
           cli-version: '2.154.4'
 ```
 
 The job fails when any finding is HIGH or CRITICAL, or when the audit does not produce a report. The job summary shows the grade, open findings by severity, the attack chains and the 15 most severe findings. The full HTML and Markdown reports are in the `sf-audit-report` artifact.
+
+<a href="https://www.softwareinsights.dev/samples/sf-audit/sample-report.html"><img src="https://www.softwareinsights.dev/samples/sf-audit/sample-report.png" width="720" alt="sf-audit HTML report for a fictional org: grade F at 77 out of 100 and why, 42 open findings by severity, and user, code, integration and governance metrics" /></a>
+
+*The HTML report from a fictional org, produced by the real checks against synthetic data. Open the full [sample report](https://www.softwareinsights.dev/samples/sf-audit/sample-report.html) to see the fix-first plan, attack paths and domain scorecard below this view.*
 
 ## Give it a read-only user
 
